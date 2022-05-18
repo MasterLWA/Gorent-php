@@ -30,6 +30,17 @@
     </div>
 
 
+    <div class="container row " style="text-align:center; padding-top:50px; " >
+        <div class="h1 text-center">SELECT USER TYPE</div>
+            <div class="col" style="padding-top:50px;padding-right:20px;padding-left:20px; ">
+                <button type="button" class="btn btn-secondary btn-lg" onclick="window.location.href='userRegistation.php'">Customer</button>
+            </div>
+            <div class="col" class="col" style="padding-top:50px;padding-right:20px;padding-left:20px; ">
+                <button type="button" class="btn btn-secondary btn-lg">Vehicle Owner</button>
+            </div>
+            
+    </div>
+
  <!-- Footer -->
  <footer class="bg-white mt-auto footer"  id="footer">
     <div class="container py-5">
