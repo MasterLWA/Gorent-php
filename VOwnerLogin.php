@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GoRent | Customer Login</title>
+    <title>GoRent | Vehicle Owner Login</title>
     <link rel="shortcut icon" href="src/images/go%20rent.png" type="image/x-icon">
     <!--Link CSS-->
     <link rel="stylesheet" href="src/css/login.css">
@@ -42,7 +42,7 @@
 
     
 
-    <p style="margin-top: 10px;">Not registered?<a href="userRegistation.php">Register</a></p>
+    <p style="margin-top: 10px;">Not registered?<a href="VOwnerReg.php">Register</a></p>
 </div>
 <!-- Latest compiled JavaScript Boostrap-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

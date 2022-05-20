@@ -36,7 +36,7 @@
                 <button type="button" class="btn btn-secondary btn-lg" onclick="window.location.href='userRegistation.php'">Customer</button>
             </div>
             <div class="col" class="col" style="padding-top:50px;padding-right:20px;padding-left:20px; ">
-                <button type="button" class="btn btn-secondary btn-lg">Vehicle Owner</button>
+                <button type="button" class="btn btn-secondary btn-lg" onclick="window.location.href='VOwnerReg.php'">Vehicle Owner</button>
             </div>
             
     </div>
@@ -60,7 +60,9 @@
           <ul class="list-unstyled mb-0">
             <li class="mb-2"><a href="#" class="flinks">Home</a></li>
             <li class="mb-2"><a href="#" class="flinks">Login Customer</a></li>
+            <li class="mb-2"><a href="#" class="flinks">Register Customer</a></li>
             <li class="mb-2"><a href="#" class="flinks">Log in Vehicle Owners</a></li>
+            <li class="mb-2"><a href="#" class="flinks">Register Vehicle Owners</a></li>
             <li class="mb-2"><a href="#" class="flinks">Register Vehicle</a></li>
           </ul>
         </div>
@@ -70,7 +72,7 @@
             <li class="mb-2"><a href="#" class="flinks">Manager Login</a></li>
             <li class="mb-2"><a href="#" class="flinks">Conact</a></li>
             <li class="mb-2"><a href="#" class="flinks"></a></li>
-            <li class="mb-2"><a href="#" class="flinks">Our Products</a></li>
+            <li class="mb-2"><a href="#" class="flinks">Vehicles</a></li>
           </ul>
         </div>
       </div>
@@ -79,7 +81,7 @@
     <!-- Copyrights -->
     <div class="bg-light py-4">
       <div class="container text-center">
-        <p class="text-muted mb-0 py-2">All rights reserved by GoRent pvt(lmt)</p>
+        <p class="text-muted mb-0 py-2">All rights reserved by GoRent PVT(LMT)</p>
       </div>
     </div>
   </footer>

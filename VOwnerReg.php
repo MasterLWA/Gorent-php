@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GoRent | Customer Registation </title>
+    <title>GoRent | Vehicle Owner Registation</title>
     <link rel="shortcut icon" href="src/images/go%20rent.png" type="image/x-icon">
     <!--Link CSS-->
     <link rel="stylesheet" href="src/css/registation.css">
@@ -28,21 +28,22 @@
 </div>
 
 
-     <div class="container" id="boxarouninputs">
-    <div class="form Loginform container" style="padding-top: 50px;text-align: center; " >
+    <div class="container" id="boxarouninputs">
+    <div class="form Loginform container" style="padding-top: 50px;text-align: center;" >
         <form method="POST" >
         <input type="text" id="name" name="name" placeholder="Enter Name" class="inputs"><br>    
         <input type="email" id="email" name="email" placeholder="Enter e-mail" class="inputs"><br>
         <input type="tel" id="telnum" name="telnum" placeholder="Enter Phone Number" class="inputs"><br>
+        <input type="number" id="NIC" name="NIC" placeholder="Enter NIC" class="inputs"><br>
         <input type="password" id="pwd" name="pwd" placeholder="Enter Password" class="inputs"><br>
-       <input type="text" id="dob" name="dob" placeholder="Enter Birth Day" class="inputs" onfocus="(this.type='date')"> <br>
+        <input type="text" id="dob" name="dob" placeholder="Enter Birth Day" class="inputs" onfocus="(this.type='date')"> <br>
         <input type="text" id="address" name="adress" placeholder="Enter Address" class="inputs"><br>
         
 
        <input id="inputbutton" name="reg" type="submit" value="Register"/>
        </form>
      </div>
-    <p style="margin-top: 10px;">Already registered?<a href="userLogin.php">Log in</a></p>
+    <p style="margin-top: 10px;">Already registered?<a href="VOwnerLogin.php">Log in</a></p>
 </div>   
 
 
@@ -54,6 +55,7 @@ require 'src/php/config.php';
 $name = $_POST["name"];
 $email = $_POST["email"];
 $pNum = $_POST["telnum"];
+$nic = $_POST["NIC"];
 $pwd = $_POST["pwd"];
 $bd = $_POST["dob"];
 $adrs = $_POST["adress"];
@@ -63,8 +65,8 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "INSERT INTO Users (Name, email, pNumber,Password,BirthDay,Adress)
-VALUES ('$name', '$email', '$pNum','$pwd', '$bd', '$adrs')";
+$sql = "INSERT INTO VehicleOwners (Name, email, pNumber,NIC,Password,dob,Address)
+VALUES ('$name', '$email', '$pNum','$nic','$pwd', '$bd', '$adrs')";
 
 if ($conn->query($sql) === TRUE) {
   echo "New record created successfully";
