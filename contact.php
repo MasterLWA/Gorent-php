@@ -47,7 +47,7 @@
 
       <!--Grid column-->
       <div class="col-md-9 mb-md-0 mb-5">
-          <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+          <form id="contact-form" name="contact-form"  method="POST">
 
               <!--Grid row-->
               <div class="row" style="margin-top: 20px;">
@@ -97,12 +97,13 @@
                   </div>
               </div>
               <!--Grid row-->
+              <div class="text-center text-md-left" style="margin-top: 20px;" >
+              <input id="inputbutton" name="reg" type="submit" value="Send"/>
+          </div>
 
           </form>
 
-          <div class="text-center text-md-left" style="margin-top: 20px;" >
-              <a class="btn" id="button"  onclick="document.getElementById('contact-form').submit();">Send</a>
-          </div>
+          
           <div class="status"></div>
       </div>
       <!--Grid column-->
@@ -131,9 +132,41 @@
   </div>
 
 </div>
+
+<?php
+        require "src/php/config.php";
+
+        $name = $_POST["name"];
+        $email = $_POST["email"];
+        $subject = $_POST["subject"];
+        $message = $_POST["message"]; 
+
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+  
+        $sql = "INSERT INTO messages (Name, email,subject,message)
+        VALUES ('$name', '$email', '$subject','$message')";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Submited Successfully";
+  } else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+  }
+  
+        
+  
+
+  $conn->close();
+?>
 <!--Section: Contact v.2-->
 
       <!-- Latest compiled JavaScript Boostrap-->
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html> 
+
+
+
+

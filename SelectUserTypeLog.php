@@ -36,7 +36,7 @@
                 <button type="button" class="btn btn-secondary btn-lg" onclick="window.location.href='userLogin.php'">Customer</button>
             </div>
             <div class="col" class="col" style="padding-top:50px;padding-right:20px;padding-left:20px; ">
-                <button type="button" class="btn btn-secondary btn-lg">Vehicle Owner</button>
+                <button type="button" class="btn btn-secondary btn-lg" onclick="window.location.href='VOwnerLogin.php'">Vehicle Owner</button>
             </div>
             
     </div>

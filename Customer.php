@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+if(isset($_SESSION['username'])) {
+    $userid = $_SESSION['username'];
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,10 +36,8 @@
     </div>
 
     <?php
-session_start();
-if(isset($_SESSION['userName'])) {
-$userid = $_SESSION['userName'];
-}
+
+
 
 echo "Hello $userid";
 ?>

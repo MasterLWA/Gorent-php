@@ -1,13 +1,10 @@
-<?php
-session_start();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GoRent | Customer Login</title>
+    <title>GoRent | Manager Login</title>
     <link rel="shortcut icon" href="src/images/go%20rent.png" type="image/x-icon">
     <!--Link CSS-->
     <link rel="stylesheet" href="src/css/login.css">
@@ -33,7 +30,7 @@ session_start();
 <div class="container" id="boxarouninputs">
     <div class="form Loginform container" style="padding-top: 50px;text-align: center; ">
         <form method="POST">
-            <input type="email" id="email" name="email" placeholder="Enter email" class="inputs"><br>
+            <input type="text" id="text" name="text" placeholder="Enter User Name" class="inputs"><br>
 
             <input type="password" id="pwd" name="pwd" placeholder="Enter Password" class="inputs"><br>
 
@@ -42,52 +39,44 @@ session_start();
 
     </div>
 
+<?php
+require "src/php/config.php";
 
-    
+$username = $_POST["text"];
+$password = $_POST["pwd"];
 
-    <p style="margin-top: 10px;">Not registered?<a href="userRegistation.php">Register</a></p>
+  //to prevent from mysqli injection  
+  $username = stripcslashes($username);  
+  $password = stripcslashes($password);  
+  $username = mysqli_real_escape_string($conn, $username);  
+  $password = mysqli_real_escape_string($conn, $password);  
+
+  $sql = "select * from Manager where UserName = '$username' and Password = '$password'";  
+  $result = mysqli_query($conn, $sql);  
+  $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
+  $count = mysqli_num_rows($result);
+  
+
+  if($count == 1){  
+     
+      header("Location:Manager.php");
+     
+
+
+  }  
+  else{  
+     
+      echo "Login failed. Invalid username or password :(";
+  }
+?>
+
+
 </div>
 <!-- Latest compiled JavaScript Boostrap-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
-<?php
-      require 'src/php/config.php';
-
-      $username = $_POST["email"];
-      $password = $_POST["pwd"];
-
-        //to prevent from mysqli injection  
-        $username = stripcslashes($username);  
-        $password = stripcslashes($password);  
-        $username = mysqli_real_escape_string($conn, $username);  
-        $password = mysqli_real_escape_string($conn, $password);  
-      
-        $sql = "select *from users where email = '$username' and password = '$password'";  
-        $result = mysqli_query($conn, $sql);  
-        $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
-        $count = mysqli_num_rows($result);
-        
-    
-        if($count == 1){  
-           
-            header("Location: customer.php");
-           
-
-
-        }  
-        else{  
-           
-            echo "Login failed. Invalid username or password :(";
-        }
-
-
-        /*session_start();*/
-
-      //  $_SESSION["userName"] = $_POST["email"];
-        $_SESSION['username'] = $username;
-   $conn -> close();
-?>
 
 
 </html>
+

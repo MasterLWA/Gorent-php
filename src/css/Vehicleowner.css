@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
+
+/* Nav Bar */
+.topnav {
+    overflow: hidden;
+    background-color: black;
+    font-family: 'Inter', sans-serif;
+     margin: 0;
+  }
+  
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .topnav a.active {
+    background-color: #720b98;
+    color: white;
+  }
+/*Nav Bar*/
+
+  #logoimgs{
+   width: auto;
+   height: 60px;
+  }
+
+  #footer{
+    background: no-repeat,linear-gradient(to bottom, #cc00ff 0%, #6600cc 100%);
+    color:lavender;
+  }
+  
+  a{
+    text-decoration: none;
+  }
+
+  .flinks{
+    color: lightcyan;
+    text-decoration: none;
+  }
+
+#registerVehicle{
+    height: 120px;
+    margin-top: 20px;
+    background: linear-gradient(to bottom, #6600cc 0%, #cc00ff 100%);
+}
+
+#btn{
+   
+    background: linear-gradient(135deg, rgba(7, 145, 255, 1) 0%, rgba(85, 98, 219, 1) 100%);
+    border-top-right-radius: 5px;
+    border-top-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    border-bottom-left-radius: 10px;
+    border-color: rgba(85, 98, 219, 1);
+    color: white;
+    width: 200px;
+    height: 50px;
+}
+
+#btn:hover{
+    background: linear-gradient(135deg, rgba(7, 145, 255, 1) 0%, rgba(85, 98, 219, 1) 100%);
+    border-top-right-radius: 100px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 100px;
+    border-color: rgba(85, 98, 219, 1);
+}
+
+
+
+table, td{
+    border: 2px solid black;
+}
+

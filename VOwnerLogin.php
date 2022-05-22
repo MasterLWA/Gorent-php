@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,38 +63,24 @@
         $username = mysqli_real_escape_string($conn, $username);  
         $password = mysqli_real_escape_string($conn, $password);  
       
-        $sql = "select *from users where email = '$username' and password = '$password'";  
+        $sql = "select *from VehicleOwners where email = '$username' and password = '$password'";  
         $result = mysqli_query($conn, $sql);  
         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
         $count = mysqli_num_rows($result);
         
     
         if($count == 1){  
-           
-            header("Location: customer.php");
-           
-
-
+             header("Location: vehicleOwner.php");
         }  
         else{  
            
-            echo '<script>alert("Login failed. Invalid username or password :(")</script>';
+             echo "Login failed. Invalid username or password :(";
         }
-
-
-        session_start();
-
-        $_SESSION["userName"] = $_POST["email"];
-        if(isset($_SESSION["userName"]))
-        {
-            //Redirect to another page
-            header("Location:home.php");
-            header("Location: customer.php");
-        }
-
-
+ 
+        $_SESSION['username'] = $username;
    $conn -> close();
 ?>
+
 
 
 </html>
